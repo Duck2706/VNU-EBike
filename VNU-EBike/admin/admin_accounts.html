@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin_accounts.css">
+    <title>Danh mục xe cho thuê</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <h1>VNU-EBike</h1>
+        </div>
+        <div class="header-right">
+            <div class="profile" id="profile">
+                <img src="assets/images/user-avatar.png" alt="Avatar" class="profile-avatar">
+                <span class="profile-name">Tên Tài Khoản</span>
+                <div class="profile-dropdown" id="profileDropdown">
+                    <ul>
+                        <li><a href="#">Xem hồ sơ</a></li>
+                        <li><a href="#">Đăng xuất</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="admin-content">
+        <nav class="admin-content-left">
+            <ul class="user-list">
+                <li><a href="#">Tài khoản admin</a>
+                    <ul>
+                        <li><a href="#">Thêm tài khoản admin</a></li>
+                        <li><a href="#">Danh sách tài khoản admin</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Loại sản phẩm</a>
+                    <ul>
+                        <li><a href="#">Thêm loại sản phẩm</a></li>
+                        <li><a href="#">Danh sách loại sản phẩm</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Sản phẩm</a>
+                    <ul>
+                        <li><a href="#">Thêm sản phẩm</a></li>
+                        <li><a href="#">Danh sách sản phẩm</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="admin-content-right">
+            <div class = "admin-content-right-add">
+                <h1>Thêm danh mục</h1>
+                <form action = "" method ="POST"> 
+                    <input type = "text" placeholder = "Nhập tên danh mục"> 
+                    <button type = "submit">Thêm</button>    
+                </form> 
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const profile = document.getElementById('profile');
+        const profileDropdown = document.getElementById('profileDropdown');
+
+        profile.addEventListener('click', function() {
+            profileDropdown.classList.toggle('show');
+        });
+
+        window.addEventListener('click', function(e) {
+            if (!profile.contains(e.target)) {
+                profileDropdown.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
